@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Sprint2Lab</string>
+    <string name="title_app">Calculadora de areas</string>
+    <string name="shape_rectangle">Figura de un rectangulo</string>
+    <string name="shape_circle">Figura de un circulo</string>
+    <string name="shape_triangle">Figura de un triangulo</string>
 </resources>
