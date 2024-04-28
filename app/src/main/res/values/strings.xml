@@ -4,4 +4,7 @@
     <string name="shape_rectangle">Figura de un rectangulo</string>
     <string name="shape_circle">Figura de un circulo</string>
     <string name="shape_triangle">Figura de un triangulo</string>
+    <string name="calc_area">calcular el area</string>
+    <string name="set_base_triangle">Introduzca la base del triangulo</string>
+    <string name="set_height_triangle">Introduzca la altura del triangulo</string>
 </resources>
