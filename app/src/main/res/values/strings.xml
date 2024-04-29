@@ -7,4 +7,5 @@
     <string name="calc_area">calcular el area</string>
     <string name="set_base_triangle">Introduzca la base del triangulo</string>
     <string name="set_height_triangle">Introduzca la altura del triangulo</string>
+    <string name="set_radio">Introduzca el radio del circulo</string>
 </resources>
