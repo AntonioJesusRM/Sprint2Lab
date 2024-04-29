@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorApp"
-    tools:context=".ui.shape.triangle.TriangleFragment">
+    tools:context=".ui.shape.rectangle.RectangleFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -15,8 +14,8 @@
             android:id="@+id/ivTriangle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/shape_triangle"
-            android:src="@drawable/baseline_triangle_24"
+            android:contentDescription="@string/shape_circle"
+            android:src="@drawable/baseline_circle_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -35,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="45dp"
-            android:hint="@string/set_base_triangle"
+            android:hint="@string/set_base_rectangle"
             android:importantForAutofill="no"
             android:inputType="numberDecimal"
             android:text=""
@@ -48,14 +47,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="45dp"
-            android:hint="@string/set_height_triangle"
+            android:hint="@string/set_height_rectangle"
             android:importantForAutofill="no"
             android:inputType="numberDecimal"
             android:text=""
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etBase" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

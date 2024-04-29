@@ -10,6 +10,8 @@ import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import com.example.sprint2lab.R
 import com.example.sprint2lab.databinding.ActivityShapeBinding
+import com.example.sprint2lab.ui.shape.circle.CircleFragment
+import com.example.sprint2lab.ui.shape.rectangle.RectangleFragment
 import com.example.sprint2lab.ui.shape.triangle.TriangleFragment
 
 class ShapeActivity : AppCompatActivity() {
@@ -26,25 +28,15 @@ class ShapeActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val shape = setView()
-        binding.btnCalc.setOnClickListener { onCalculateAreaButtonClicked(shape) }
+        setView()
+        binding.btnCalc.setOnClickListener { onCalculateAreaButtonClicked() }
     }
 
-    private fun onCalculateAreaButtonClicked(shape: String) {
-        when (shape) {
-            "triangle" -> {
-                val triangleFragment =
-                    supportFragmentManager.findFragmentById(R.id.fragmentShape) as TriangleFragment
-                val base =
-                    triangleFragment.binding.etBase.text.toString().toDoubleOrNull() ?: return
-                val height =
-                    triangleFragment.binding.etHeight.text.toString().toDoubleOrNull() ?: return
-                binding.tvArea.text = shapeViewModel.returnArea(base, height)
-            }
-        }
+    private fun onCalculateAreaButtonClicked() {
+        binding.tvArea.text = shapeViewModel.returnArea(supportFragmentManager)
     }
 
-    private fun setView(): String {
+    private fun setView() {
         val shape: String = shapeViewModel.returnShape()
         when (shape) {
             "triangle" -> {
@@ -53,7 +45,20 @@ class ShapeActivity : AppCompatActivity() {
                     add<TriangleFragment>(R.id.fragmentShape)
                 }
             }
+
+            "circle" -> {
+                supportFragmentManager.commit {
+                    setReorderingAllowed(true)
+                    add<CircleFragment>(R.id.fragmentShape)
+                }
+            }
+
+            "rectangle" -> {
+                supportFragmentManager.commit {
+                    setReorderingAllowed(true)
+                    add<RectangleFragment>(R.id.fragmentShape)
+                }
+            }
         }
-        return shape
     }
 }

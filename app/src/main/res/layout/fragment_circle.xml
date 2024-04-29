@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorApp"
-    tools:context=".ui.shape.triangle.TriangleFragment">
+    tools:context=".ui.shape.circle.CircleFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -15,8 +15,8 @@
             android:id="@+id/ivTriangle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/shape_triangle"
-            android:src="@drawable/baseline_triangle_24"
+            android:contentDescription="@string/shape_circle"
+            android:src="@drawable/baseline_circle_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -31,31 +31,17 @@
             app:layout_constraintTop_toBottomOf="@id/ivTriangle" />
 
         <EditText
-            android:id="@+id/etBase"
+            android:id="@+id/etRadio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="45dp"
-            android:hint="@string/set_base_triangle"
+            android:hint="@string/set_radio"
             android:importantForAutofill="no"
             android:inputType="numberDecimal"
             android:text=""
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/wvForm" />
-
-        <EditText
-            android:id="@+id/etHeight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
-            android:hint="@string/set_height_triangle"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-            android:text=""
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/etBase" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
