@@ -33,7 +33,7 @@ class ShapeViewModel : ViewModel() {
                 val circleFragment =
                     supportFragment.findFragmentById(R.id.fragmentShape) as CircleFragment
                 val radio =
-                    circleFragment.binding.etBase.text.toString().toDoubleOrNull() ?: 0.0
+                    circleFragment.binding.etRadio.text.toString().toDoubleOrNull() ?: 0.0
                 val circle = Circle(radio)
                 area = circle.calculateArea().toString()
             }
