@@ -11,6 +11,7 @@ import androidx.fragment.app.commit
 import com.example.sprint2lab.R
 import com.example.sprint2lab.databinding.ActivityShapeBinding
 import com.example.sprint2lab.ui.shape.circle.CircleFragment
+import com.example.sprint2lab.ui.shape.rectangle.RectangleFragment
 import com.example.sprint2lab.ui.shape.triangle.TriangleFragment
 
 class ShapeActivity : AppCompatActivity() {
@@ -49,6 +50,13 @@ class ShapeActivity : AppCompatActivity() {
                 supportFragmentManager.commit {
                     setReorderingAllowed(true)
                     add<CircleFragment>(R.id.fragmentShape)
+                }
+            }
+
+            "rectangle" -> {
+                supportFragmentManager.commit {
+                    setReorderingAllowed(true)
+                    add<RectangleFragment>(R.id.fragmentShape)
                 }
             }
         }

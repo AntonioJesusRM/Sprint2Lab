@@ -9,5 +9,5 @@
     <string name="set_height_triangle">Introduzca la altura del triangulo</string>
     <string name="set_radio">Introduzca el radio del circulo</string>
     <string name="set_base_rectangle">Introduzca la base del rectangulo</string>
-    <string name="set_height_rectangle">Introduzca la base del rectangulo</string>
+    <string name="set_height_rectangle">Introduzca la altura del rectangulo</string>
 </resources>

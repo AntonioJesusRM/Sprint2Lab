@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.example.sprint2lab.R
 import com.example.sprint2lab.data.DataShape
 import com.example.sprint2lab.ui.shape.circle.CircleFragment
+import com.example.sprint2lab.ui.shape.rectangle.RectangleFragment
 import com.example.sprint2lab.ui.shape.triangle.TriangleFragment
 
 class ShapeViewModel : ViewModel() {
@@ -36,6 +37,17 @@ class ShapeViewModel : ViewModel() {
                     circleFragment.binding.etRadio.text.toString().toDoubleOrNull() ?: 0.0
                 val circle = Circle(radio)
                 area = circle.calculateArea().toString()
+            }
+
+            "rectangle" -> {
+                val rectangleFragment =
+                    supportFragment.findFragmentById(R.id.fragmentShape) as RectangleFragment
+                val base =
+                    rectangleFragment.binding.etBase.text.toString().toDoubleOrNull() ?: 0.0
+                val height =
+                    rectangleFragment.binding.etHeight.text.toString().toDoubleOrNull() ?: 0.0
+                val rectangle = Rectangle(base, height)
+                area = rectangle.calculateArea().toString()
             }
 
             else -> {

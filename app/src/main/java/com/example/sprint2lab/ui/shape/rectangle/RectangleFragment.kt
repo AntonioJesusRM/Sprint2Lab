@@ -11,7 +11,7 @@ import com.example.sprint2lab.databinding.FragmentRectangleBinding
 
 class RectangleFragment : Fragment() {
     private var _binding: FragmentRectangleBinding? = null
-    private val binding get() = _binding!!
+    val binding get() = _binding!!
     private val rectangleViewModel: RectangleViewModel by viewModels()
 
     override fun onCreateView(
