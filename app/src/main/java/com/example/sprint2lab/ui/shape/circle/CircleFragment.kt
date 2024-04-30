@@ -11,7 +11,7 @@ import com.example.sprint2lab.databinding.FragmentCircleBinding
 
 class CircleFragment : Fragment() {
     private var _binding: FragmentCircleBinding? = null
-    val binding get() = _binding!!
+    private val binding get() = _binding!!
     private val circleViewModel: CircleViewModel by viewModels()
 
     override fun onCreateView(

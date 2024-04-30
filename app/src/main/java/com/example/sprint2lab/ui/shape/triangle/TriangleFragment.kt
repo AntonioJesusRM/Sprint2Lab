@@ -11,7 +11,7 @@ import com.example.sprint2lab.databinding.FragmentTriangleBinding
 
 class TriangleFragment : Fragment() {
     private var _binding: FragmentTriangleBinding? = null
-    val binding get() = _binding!!
+    private val binding get() = _binding!!
     private val triangleViewModel: TriangleViewModel by viewModels()
 
     override fun onCreateView(
