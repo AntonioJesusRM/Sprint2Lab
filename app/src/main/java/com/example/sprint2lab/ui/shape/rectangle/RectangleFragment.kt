@@ -38,4 +38,12 @@ class RectangleFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    fun getBase(): Double? {
+        return binding.etBase.text.toString().toDoubleOrNull()
+    }
+
+    fun getHeight(): Double? {
+        return binding.etHeight.text.toString().toDoubleOrNull()
+    }
 }

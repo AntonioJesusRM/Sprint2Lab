@@ -3,7 +3,6 @@ package com.example.sprint2lab.ui.shape
 
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModel
-import com.example.sprint2lab.R
 import com.example.sprint2lab.data.DataShape
 import com.example.sprint2lab.ui.shape.circle.CircleFragment
 import com.example.sprint2lab.ui.shape.rectangle.RectangleFragment
@@ -17,43 +16,34 @@ class ShapeViewModel : ViewModel() {
     }
 
     fun returnArea(supportFragment: FragmentManager): String {
-        val area: String
-        when (shape) {
-            "triangle" -> {
-                val triangleFragment =
-                    supportFragment.findFragmentById(R.id.fragmentShape) as TriangleFragment
-                val base =
-                    triangleFragment.binding.etBase.text.toString().toDoubleOrNull() ?: 0.0
-                val height =
-                    triangleFragment.binding.etHeight.text.toString().toDoubleOrNull() ?: 0.0
-                val triangle = Triangle(base, height)
-                area = triangle.calculateArea().toString()
-            }
-
-            "circle" -> {
-                val circleFragment =
-                    supportFragment.findFragmentById(R.id.fragmentShape) as CircleFragment
-                val radio =
-                    circleFragment.binding.etRadio.text.toString().toDoubleOrNull() ?: 0.0
-                val circle = Circle(radio)
-                area = circle.calculateArea().toString()
-            }
-
-            "rectangle" -> {
-                val rectangleFragment =
-                    supportFragment.findFragmentById(R.id.fragmentShape) as RectangleFragment
-                val base =
-                    rectangleFragment.binding.etBase.text.toString().toDoubleOrNull() ?: 0.0
-                val height =
-                    rectangleFragment.binding.etHeight.text.toString().toDoubleOrNull() ?: 0.0
-                val rectangle = Rectangle(base, height)
-                area = rectangle.calculateArea().toString()
-            }
-
-            else -> {
-                area = "Error: Shape don't found"
-            }
+        return when (shape) {
+            "triangle" -> calculateTriangleArea(supportFragment)
+            "circle" -> calculateCircleArea(supportFragment)
+            "rectangle" -> calculateRectangleArea(supportFragment)
+            else -> "Error: Shape don't found"
         }
-        return area
+    }
+
+    private fun calculateTriangleArea(fragment: FragmentManager): String {
+        val triangleFragment = fragment as TriangleFragment
+        val base = triangleFragment.getBase() ?: 0.0
+        val height = triangleFragment.getHeight() ?: 0.0
+        val triangle = Triangle(base, height)
+        return triangle.calculateArea().toString()
+    }
+
+    private fun calculateCircleArea(fragment: FragmentManager): String {
+        val circleFragment = fragment as CircleFragment
+        val radius = circleFragment.getRadius() ?: 0.0
+        val circle = Circle(radius)
+        return circle.calculateArea().toString()
+    }
+
+    private fun calculateRectangleArea(fragment: FragmentManager): String {
+        val rectangleFragment = fragment as RectangleFragment
+        val base = rectangleFragment.getBase() ?: 0.0
+        val height = rectangleFragment.getHeight() ?: 0.0
+        val rectangle = Rectangle(base, height)
+        return rectangle.calculateArea().toString()
     }
 }
