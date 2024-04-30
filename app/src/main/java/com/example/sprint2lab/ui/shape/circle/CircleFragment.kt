@@ -38,4 +38,8 @@ class CircleFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    fun getRadius(): Double? {
+        return binding.etRadio.text.toString().toDoubleOrNull()
+    }
 }
